@@ -19,7 +19,7 @@ public final class PositionHintIconMessageEncoder extends MessageEncoder<Positio
 	@Override
 	public GamePacket encode(PositionHintIconMessage message) {
 		GamePacketBuilder builder = new GamePacketBuilder(199);
-		HintIconMessage.Type type = message.getType();
+		Type type = message.getType();
 
 		if (type == Type.PLAYER || type == Type.NPC) {
 			throw new IllegalStateException("Unsupported hint icon type " + type + ".");

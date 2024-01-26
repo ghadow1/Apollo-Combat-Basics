@@ -38,6 +38,7 @@ public final class WalkMessageHandler extends MessageHandler<WalkMessage> {
 
 		queue.setRunning(message.isRunning() || player.isRunning());
 		player.getInterfaceSet().close();
+		player.getCombat().reset();
 
 		if (queue.size() > 0) {
 			player.stopAction();

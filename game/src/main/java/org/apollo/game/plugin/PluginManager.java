@@ -144,5 +144,4 @@ public final class PluginManager {
 
 		env.load(plugins.values());
 	}
-
 }

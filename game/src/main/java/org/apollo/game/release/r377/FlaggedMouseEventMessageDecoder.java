@@ -7,7 +7,7 @@ import org.apollo.net.codec.game.GamePacketReader;
 import org.apollo.net.release.MessageDecoder;
 
 /**
- * A {@link MessageDecoder} for the {@link org.apollo.game.message.impl.FlaggedMouseEventMessage}.
+ * A {@link MessageDecoder} for the {@link FlaggedMouseEventMessage}.
  *
  * @author Major
  */

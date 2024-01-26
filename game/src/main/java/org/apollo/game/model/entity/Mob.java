@@ -11,10 +11,12 @@ import org.apollo.game.model.area.Region;
 import org.apollo.game.model.area.RegionRepository;
 import org.apollo.game.model.entity.attr.Attribute;
 import org.apollo.game.model.entity.attr.AttributeMap;
+import org.apollo.game.model.entity.combat.Combat;
 import org.apollo.game.model.event.impl.MobPositionUpdateEvent;
 import org.apollo.game.model.inv.Inventory;
 import org.apollo.game.model.inv.Inventory.StackMode;
 import org.apollo.game.model.inv.InventoryConstants;
+import org.apollo.game.scheduling.impl.CombatListenerTask;
 import org.apollo.game.scheduling.impl.SkillNormalizationTask;
 import org.apollo.game.sync.block.InteractingMobBlock;
 import org.apollo.game.sync.block.SynchronizationBlock;
@@ -117,6 +119,11 @@ public abstract class Mob extends Entity {
 	 * Indicates whether this mob is currently teleporting or not.
 	 */
 	private boolean teleporting;
+
+	/**
+	 * Create the combat handler for this mob
+	 */
+	private final Combat combat = new Combat(this);
 
 	/**
 	 * Creates the Mob.
@@ -596,8 +603,14 @@ public abstract class Mob extends Entity {
 	 * Initialises this mob.
 	 */
 	private void init() {
+		world.schedule(new CombatListenerTask(this));
 		world.schedule(new SkillNormalizationTask(this));
 	}
 
-
+	/**
+	 * Get the combat handler for this mob
+     */
+	public Combat getCombat() {
+		return combat;
+	}
 }

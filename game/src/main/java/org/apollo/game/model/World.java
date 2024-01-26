@@ -224,8 +224,8 @@ public final class World {
 			new NpcDefinitionDecoder(fs),
 			new ItemDefinitionDecoder(fs),
 			new ObjectDefinitionDecoder(fs),
-			new MapIndexDecoder(fs),
-			EquipmentDefinitionParser.fromFile("data/equipment-" + release + "" + ".dat")
+			new MapIndexDecoder(fs)
+			//..EquipmentDefinitionParser.fromFile("data/equipment-" + release + "" + ".dat")
 		);
 
 		firstStageDecoder.block();

@@ -624,7 +624,7 @@ public final class Player extends Mob {
 	}
 
 	/**
-	 * Indicates whether or not the player is skulled
+	 * Indicates whether the player is skulled
 	 *
 	 * @return {@code true} if the player is skulled, otherwise {@code false}.
 	 */
@@ -882,7 +882,7 @@ public final class Player extends Mob {
 	/**
 	 * Sets the region changed flag.
 	 *
-	 * @param regionChanged Whether or not the region has changed.
+	 * @param regionChanged Whether the region has changed.
 	 */
 	public void setRegionChanged(boolean regionChanged) {
 		this.regionChanged = regionChanged;
@@ -917,9 +917,9 @@ public final class Player extends Mob {
 	}
 
 	/**
-	 * Sets whether or not the player is skulled. TODO make this an attribute
+	 * Sets whether the player is skulled. TODO make this an attribute
 	 *
-	 * @param isSkulled Whether or not the player is skulled.
+	 * @param isSkulled Whether the player is skulled.
 	 */
 	public void setSkulled(boolean isSkulled) {
 		this.isSkulled = isSkulled;
@@ -935,7 +935,7 @@ public final class Player extends Mob {
 	}
 
 	/**
-	 * Sets whether or not the player is withdrawing notes from the bank.
+	 * Sets whether the player is withdrawing notes from the bank.
 	 *
 	 * @param withdrawingNotes Whether or not the player is withdrawing noted
 	 * items.

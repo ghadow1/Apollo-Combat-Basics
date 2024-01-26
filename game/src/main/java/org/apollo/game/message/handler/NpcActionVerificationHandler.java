@@ -16,6 +16,11 @@ import org.apollo.game.model.entity.Player;
 public final class NpcActionVerificationHandler extends MessageHandler<NpcActionMessage> {
 
 	/**
+	 * NPC Attack Option
+	 */
+	final int ATTACK_OPTION = 2;
+
+	/**
 	 * Creates the NpcActionVerificationHandler.
 	 *
 	 * @param world The {@link World} the {@link NpcActionMessage} occurred in.
@@ -55,6 +60,9 @@ public final class NpcActionVerificationHandler extends MessageHandler<NpcAction
 			message.terminate();
 			return;
 		}
-	}
 
+		if (option == ATTACK_OPTION) {
+			player.getCombat().initiate(npc);
+		}
+	}
 }
